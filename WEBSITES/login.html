@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* Responsive Styles */
+        
+        @media only screen and (max-width: 768px) {
+            body {
+                font-size: 16px;
+            }
+            .page_title {
+                font-size: 30px;
+            }
+        }
+        
+        @media only screen and (max-width: 480px) {
+            body {
+                font-size: 14px;
+            }
+            .page_title {
+                font-size: 24px;
+            }
+        }
+        
+        body {
+            font-size: 18px;
+            line-height: 34px;
+            font-family: Jost, sans-serif;
+            font-weight: 300;
+            color: #222425;
+            position: relative;
+        }
+        
+        body {
+            line-height: 1;
+        }
+        
+        .page_title {
+            text-align: center;
+            width: 100%;
+            z-index: 2;
+            position: relative;
+            bottom: 0;
+            font-size: 45px;
+            font-weight: 700;
+            line-height: 100%;
+            text-transform: uppercase;
+            padding: 10px;
+            background: #09aad9;
+            color: #fff;
+        }
+        
+        #h1_title {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        
+        h1 {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        
+        #main_area {
+            background: #fff;
+        }
+        
+        #main_area {
+            margin: 0 auto;
+            padding: 40px 25px;
+            min-height: 0;
+            position: relative;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 35px;
+        }
+        
+        #main_area {
+            padding: 0 25px;
+            background: #eef8f8;
+            position: relative;
+            z-index: 10;
+            min-height: 805px;
+        }
+        
+        main a:hover {
+            text-decoration: underline;
+        }
+        
+        main a {
+            font-weight: 700;
+            color: #222425;
+            text-decoration: none;
+            word-wrap: break-word;
+        }
+        
+        a {
+            text-decoration: none;
+            -webkit-transition: all .3s linear;
+            transition: all .3s linear;
+        }
+        
+        #breadcrumbs {
+            margin: 0 0 35px;
+            border-bottom: 2px dotted gray;
+            padding-bottom: 10px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        #breadcrumbs span {
+            vertical-align: bottom;
+            display: inline-block;
+        }
+        
+        div#customer_login h2 {
+            text-align: left;
+            font-weight: 900;
+            color: #000;
+            padding: 15px 0;
+            font-size: 20px;
+            text-transform: uppercase;
+        }
+        
+        main h2,
+        main h3,
+        main h4 {
+            font-size: 3rem;
+            margin-bottom: .2em;
+            font-weight: 700;
+            color: var(--priColor);
+            font-family: var(--priFont);
+            line-height: 100%;
+        }
+        
+        h1,
+        h2,
+        h3,
+        h4,
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        
+        main p {
+            margin-bottom: 15px;
+        }
+        
+        main p {
+            margin-bottom: 30px;
+            padding: 0;
+            width: 100%;
+        }
+        
+        main p {
+            margin-bottom: 15px;
+            color: #1a1a1a;
+        }
+        
+        div#customer_login h2 {
+            text-align: left;
+            font-weight: 900;
+            color: #000;
+            padding: 15px 0;
+            font-size: 20px;
+            text-transform: uppercase;
+        }
+        
+        .woocommerce form .form-row .required {
+            visibility: visible;
+        }
+        
+        .woocommerce form .form-row .required {
+            color: red;
+            font-weight: 700;
+            border: 0!important;
+            text-decoration: none;
+            visibility: hidden;
+        }
+        
+        .woocommerce-message,
+        .woocommerce-info {
+            border-color: var(--color1, var(--wooPrimary)) !important;
+        }
+        
+        .woocommerce-info {
+            border-top-color: #1e85be;
+        }
+        
+        .woocommerce-error,
+        .woocommerce-info,
+        .woocommerce-message {
+            padding: 1em 2em 1em 3.5em;
+            margin: 0 0 2em;
+            position: relative;
+            background-color: #f7f6f7;
+            color: #515151;
+            border-top: 3px solid #a46497;
+            list-style: none outside;
+            width: auto;
+            word-wrap: break-word;
+        }
+        
+        div#customer_login .col-1,
+        div#customer_login .col-2 {
+            width: 50% !important;
+            padding: 3%;
+        }
+        
+        .woocommerce-billing-fields__field-wrapper .form-row input,
+        form.woocommerce-form.woocommerce-form-login.login .input-text,
+        form.woocommerce-form.woocommerce-form-register.register input,
+        form.woocommerce-ResetPassword.lost_reset_password input,
+        input#coupon_code,
+        input#account_password,
+        div#customer_details input,
+        .woocommerce-EditAccountForm input,
+        .woocommerce-address-fields input,
+        .woocommerce #order_comments {
+            padding: 8px 10px;
+            padding-top: 8px;
+            padding-right: 10px;
+            padding-bottom: 8px;
+            padding-left: 10px;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            border-top-width: 1px;
+            border-right-width: 1px;
+            border-bottom-width: 1px;
+            border-left-width: 1px;
+            border-top-style: solid;
+            border-right-style: solid;
+            border-bottom-style: solid;
+            border-left-style: solid;
+            border-top-color: rgba(0, 0, 0, 0.2);
+            border-right-color: rgba(0, 0, 0, 0.2);
+            border-bottom-color: rgba(0, 0, 0, 0.2);
+            border-left-color: rgba(0, 0, 0, 0.2);
+            border-image-source: initial;
+            border-image-slice: initial;
+            border-image-width: initial;
+            border-image-outset: initial;
+            border-image-repeat: initial;
+            font-size: 18px;
+            font-family: inherit;
+        }
+        
+        .woocommerce form .form-row input.input-text,
+        .woocommerce form .form-row textarea {
+            box-sizing: border-box;
+            width: 100%;
+            margin: 0;
+            margin-top: 0px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+            margin-left: 0px;
+            outline: 0;
+            outline-color: initial;
+            outline-style: initial;
+            outline-width: 0px;
+            line-height: normal;
+        }
+        
+        .woocommerce .woocommerce-form-login .woocommerce-form-login__rememberme {
+            display: inline-block;
+        }
+        
+        .woocommerce form .form-row label {
+            line-height: 2;
+        }
+        
+        .woocommerce form .form-row label,
+        .woocommerce-page form .form-row label {
+            display: block;
+        }
+        
+        .woocommerce form .form-row .input-text,
+        .woocommerce-page form .form-row .input-text {
+            box-sizing: border-box;
+            width: 100%;
+        }
+        
+        div#customer_login .col-1,
+        div#customer_login .col-2 {
+            width: 50% !important;
+            padding: 3%;
+            padding-top: 3%;
+            padding-right: 3%;
+            padding-bottom: 3%;
+            padding-left: 3%;
+        }
+        
+        div#customer_login .col-1,
+        div#customer_login .col-2 {
+            width: 50% !important;
+            padding: 3%;
+        }
+        
+        .woocommerce .col2-set .col-1,
+        .woocommerce-page .col2-set .col-1 {
+            float: left;
+            width: 48%;
+        }
+        
+        .woocommerce .col2-set .col-2,
+        .woocommerce-page .col2-set .col-2 {
+            float: right;
+            width: 48%;
+            border: 1px solid #ddd;
+            box-shadow: 3px 3px 1em #ddd;
+        }
+        
+        *,
+         :after,
+         :before {
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            image-rendering: -webkit-optimize-contrast;
+        }
+        
+        div {
+            display: block;
+        }
+        
+        .woocommerce form .form-row {
+            padding: 3px;
+            margin: 0 0 6px;
+        }
+        
+        main p {
+            margin-bottom: 15px;
+        }
+        
+        main p {
+            margin-bottom: 30px;
+            padding: 0;
+            width: 100%;
+        }
+        
+        main p {
+            margin-bottom: 15px;
+            color: #1a1a1a;
+        }
+        
+        .woocommerce-message:before,
+        .woocommerce-info:before {
+            color: var(--color1, var(--wooPrimary)) !important;
+        }
+        
+        .woocommerce-info::before {
+            color: #1e85be;
+        }
+        
+        .woocommerce-error::before,
+        .woocommerce-info::before,
+        .woocommerce-message::before {
+            font-family: WooCommerce;
+            content: "\e028";
+            display: inline-block;
+            position: absolute;
+            top: 1em;
+            left: 1.5em;
+        }
+        
+        .woocommerce-error::after,
+        .woocommerce-error::before,
+        .woocommerce-info::after,
+        .woocommerce-info::before,
+        .woocommerce-message::after,
+        .woocommerce-message::before {
+            content: " ";
+            display: table;
+        }
+        
+        .footer_top {
+            background: #eef8f8;
+            padding: 0 25px;
+            position: relative;
+        }
+        
+        .wrapper {
+            width: 100%;
+            max-width: 1375px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .footer_top_main::before {
+            right: -203px;
+        }
+        
+        .footer_top_main::before {
+            content: url(images/ftr-crv.png);
+            position: absolute;
+            right: -273px;
+            bottom: -11px;
+            z-index: 6;
+        }
+        
+        .footer_top_main {
+            position: relative;
+            padding: 117px 0 0;
+            min-height: 765px;
+        }
+        
+        *,
+         :after,
+         :before {
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            image-rendering: -webkit-optimize-contrast;
+        }
+        
+        .footer_image img {
+            max-width: initial;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        img {
+            max-width: 100%;
+            vertical-align: top;
+            image-rendering: -webkit-optimize-contrast;
+        }
+        
+        .ftr_ul1>li:nth-child(2) {
+            margin: 68px 0 0;
+        }
+        
+        .contact_info .ftr_ul1 li {
+            display: block;
+            color: #222425;
+            text-align: left;
+        }
+        
+        .contact_info .ftr_ul1 li:last-child h3 {
+            margin-bottom: 12px;
+        }
+        
+        .contact_info .ftr_ul1 li h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            font-family: 'Antic Didone', serif;
+            line-height: 100%;
+            display: block;
+        }
+        
+        .contact_info h2 {
+            font-size: 50px;
+        }
+        
+        .contact_info h2 {
+            font-family: 'Antic Didone', serif;
+            font-size: 55px;
+            line-height: 100%;
+        }
+        
+        a {
+            text-decoration: none;
+            -webkit-transition: all .3s linear;
+            transition: all .3s linear;
+        }
+        
+        h1,
+        h2,
+        h3,
+        h4,
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        
+        .footer_nav ul {
+            margin: auto 0;
+            border-bottom: 1px solid #dadada;
+            padding: 0;
+            text-align: center;
+            list-style: none;
+        }
+        
+        ol,
+        ul {
+            box-sizing: border-box;
+        }
+        
+        .copyright {
+            margin-top: 47px;
+        }
+        
+        .copyright {
+            font-size: 20px;
+            color: #1a1a1a;
+            margin-top: 30px;
+        }
+        
+        .clearfix {
+            clear: both;
+            overflow: hidden;
+        }
+        
+        .back_top {
+            display: none;
+            background: #00546f;
+            position: fixed;
+            z-index: 999;
+            bottom: 0;
+            width: 100%;
+            height: 45px;
+            cursor: pointer;
+            border-top: 2px solid #fff;
+        }
+        
+        .fadeInRight.go {
+            -webkit-animation-name: fadeInRight;
+            animation-name: fadeInRight;
+        }
+        
+        .animated {
+            animation-name: none !important;
+            opacity: 1 !important;
+            -webkit-transform: none !important;
+            transform: none !important;
+        }
+        
+        .fadeInRight {
+            opacity: 0;
+            -webkit-transform: translateX(400px);
+            transform: translateX(400px);
+        }
+        
+        .fadeInRight,
+        .fadeInLeft,
+        .fadeInUp,
+        .fadeInDown {
+            opacity: 0;
+            -webkit-transform: translateX(400px);
+            transform: translateX(400px);
+        }
+        
+        .animated {
+            -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+        }
+        
+        .contact_info {
+            width: 537px;
+        }
+        
+        .contact_info {
+            position: relative;
+            z-index: 6;
+            max-width: 100%;
+            width: 652px;
+            margin: 0 0 0 auto;
+            animation-duration: 2s!important;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <div id="banner">
+        <div class="wrapper animatedParent animateOnce">
+            <div class="non_ban">
+                <figure>
+                    <img src="https://www.barnettfacialplastics.com/wp-content/themes/barnettfacialne007/images/slider/nonhome.jpg" alt="woman having facial treatment in beauty salon" data-uw-rm-alt-original="woman having facial treatment in beauty salon">
+                </figure>
+                <div class="page_title">
+                    <h1 class="h1_title">My account</h1>
+                </div>
+            </div>
+
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <div id="main_area">
+        <div class="wrapper animatedParent animateOnce">
+            <div class="main_holder animated fadeInRight go">
+                <main>
+                    <p id="breadcrumbs"><span><span><a href="index.html">Home</a> » <span class="breadcrumb_last" aria-current="page">My account</span></span>
+                        </span>
+                    </p>
+                    <div id="post-170" class="post-170 page type-page status-publish hentry">
+
+                        <div class="entry-content">
+
+
+                            <div class="woocommerce">
+                                <div class="woocommerce-info">
+                                    <p>Returning customers can log in. <br>New users can register in order to:</p>
+                                    <ul>
+                                        <li>View order history</li>
+                                        <li>Check on orders</li>
+                                        <li>Edit addresses</li>
+                                        <li>Change passwords</li>
+                                    </ul>
+                                </div>
+                                <div class="woocommerce-notices-wrapper"></div>
+
+                                <div class="u-columns col2-set" id="customer_login">
+
+                                    <div class="u-column1 col-1">
+
+
+                                        <h2>Login</h2>
+
+                                        <form class="woocommerce-form woocommerce-form-login login" method="post">
+
+
+                                            <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+                                                <label for="username">Username or email address&nbsp;<span class="required">*</span></label>
+                                                <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="username" id="username" autocomplete="username" value=""> </p>
+                                            <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+                                                <label for="password">Password&nbsp;<span class="required">*</span></label>
+                                                <span class="password-input"><input class="woocommerce-Input woocommerce-Input--text input-text" type="password" name="password" id="password" autocomplete="current-password"><span class="show-password-input"></span></span>
+                                            </p>
+
+
+                                            <p class="form-row">
+                                                <label class="woocommerce-form__label woocommerce-form__label-for-checkbox woocommerce-form-login__rememberme">
+                <input class="woocommerce-form__input woocommerce-form__input-checkbox" name="rememberme" type="checkbox" id="rememberme" value="forever"> <span>Remember me</span>
+            </label>
+                                                <input type="hidden" id="woocommerce-login-nonce" name="woocommerce-login-nonce" value="cad51ac49a"><input type="hidden" name="_wp_http_referer" value="/facial-plastic-and-reconstructive-surgery-my-account">                                                <button type="submit" class="woocommerce-button button woocommerce-form-login__submit" name="login" value="Log in">Log in</button>
+                                            </p>
+                                            <p class="woocommerce-LostPassword lost_password">
+                                                <a href="https://www.barnettfacialplastics.com/facial-plastic-and-reconstructive-surgery-my-account/lost-password">Lost your password?</a>
+                                            </p>
+
+
+                                        </form>
+
+
+                                    </div>
+
+                                    <div class="u-column2 col-2">
+
+                                        <h2>Register</h2>
+
+                                        <form method="post" class="woocommerce-form woocommerce-form-register register">
+
+                                            <p class="form-row form-row-first">
+                                                <label for="reg_billing_first_name">First name               <span class="required">*</span>
+      </label>
+                                                <input type="text" class="input-text" name="billing_first_name" id="reg_billing_first_name" value="">
+                                            </p>
+                                            <p class="form-row form-row-last">
+                                                <label for="reg_billing_last_name">Last name               <span class="required">*</span>
+      </label>
+                                                <input type="text" class="input-text" name="billing_last_name" id="reg_billing_last_name" value="">
+                                            </p>
+                                            <p class="form-row form-row-wide">
+                                                <label for="reg_billing_phone">Phone</label>
+                                                <input type="text" class="input-text" name="billing_phone" id="reg_billing_phone" value="">
+                                            </p>
+                                            <div class="clear"></div>
+
+
+                                            <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+                                                <label for="reg_username">Username&nbsp;<span class="required">*</span></label>
+                                                <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="username" id="reg_username" autocomplete="username" value=""> </p>
+
+
+                                            <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+                                                <label for="reg_email">Email address&nbsp;<span class="required">*</span></label>
+                                                <input type="email" class="woocommerce-Input woocommerce-Input--text input-text" name="email" id="reg_email" autocomplete="email" value=""> </p>
+
+
+                                            <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+                                                <label for="reg_password">Password&nbsp;<span class="required">*</span></label>
+                                                <span class="password-input"><input type="password" class="woocommerce-Input woocommerce-Input--text input-text" name="password" id="reg_password" autocomplete="new-password"><span class="show-password-input"></span></span>
+                                            </p>
+
+
+                                            <p id="recaptcha" class="g-recaptcha" data-sitekey="6LeG9NskAAAAALWChTuU6w724sYEretZ5wLZZB-2"></p>
+                                            <div style="width: 304px; height: 78px;">
+                                                <div><iframe title="reCAPTCHA" width="304" height="78" role="presentation" name="a-jjcg2sofjcii" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation"
+                                                        src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6LeG9NskAAAAALWChTuU6w724sYEretZ5wLZZB-2&amp;co=aHR0cHM6Ly93d3cuYmFybmV0dGZhY2lhbHBsYXN0aWNzLmNvbTo0NDM.&amp;hl=en&amp;v=u-xcq3POCWFlCr3x8_IPxgPu&amp;size=normal&amp;cb=yhgsamb7m2jb"></iframe></div>
+                                                <textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea>
+                                            </div>
+                                            <p></p>
+                                            <div class="woocommerce-privacy-policy-text"></div>
+                                            <p class="woocommerce-form-row form-row">
+                                                <input type="hidden" id="woocommerce-register-nonce" name="woocommerce-register-nonce" value="ba87197655"><input type="hidden" name="_wp_http_referer" value="/facial-plastic-and-reconstructive-surgery-my-account">                                                <button type="submit" class="woocommerce-Button woocommerce-button button woocommerce-form-register__submit" name="register" value="Register">Register</button>
+                                            </p>
+
+
+                                        </form>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!--  -->
+                        </div>
+                        <!-- .entry-content -->
+                    </div>
+                    <!-- #post-## -->
+                </main>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    </div>
+    <footer>
+        <div class="footer_top">
+            <div class="wrapper animatedParent animateOnce">
+                <div class="footer_top_main">
+
+                    <figure class="footer_image"><img src="https://www.barnettfacialplastics.com/wp-content/themes/barnettfacialne007/images/ftr-img.jpg" alt="rhinoplasty" data-uw-rm-alt-original="rhinoplasty"></figure>
+
+                    <div class="contact_info animated fadeInRight go">
+                        <div class="widget_text widget-container widget_custom_html">
+                            <div class="textwidget custom-html-widget">
+                                <h2>Contact Information</h2>
+
+                                <ul class="ftr_ul1">
+                                    <li>
+                                        <h3>Service Areas Covered:</h3>
+                                        <ul class="ftr_ul2">
+                                            <li>Northwest Florida</li>
+                                            <li>Florida Panhandle</li>
+                                            <li>Destin</li>
+                                            <li>San Destin</li>
+                                            <li>Fort Walton Beach</li>
+                                            <li>Crestview</li>
+                                            <li>Pensacola</li>
+                                            <li>Panama City</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <h3>Location</h3>
+                                        <address>1241 Airport Rd., Suite A
+Destin, FL 32541</address></li>
+                                    <li>
+                                        <h3>Call or Message Us!</h3>
+                                        Phone: <mark>850-598-0099</mark> <q>|</q><small></small> Fax: <mark>850-807-5162</mark>
+                                        <a href="https://mail.google.com/mail/u/0/#inbox?compose=DmwnWrRttWWlvDzGzNrnJHDDZwgNhsPShNTcXKFfMRQFnZRLRgNBvxMVFZRsLNCjFltxvsRBrGwg">oriasjeyward@gmail.com</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="ftr_images">
+                            <ul>
+                                <li>
+                                    <figure><img src="https://www.barnettfacialplastics.com/wp-content/themes/barnettfacialne007/images/mastercard.png" alt="mastercard" data-uw-rm-alt-original="mastercard"></figure>
+                                </li>
+                                <li>
+                                    <figure><img src="https://www.barnettfacialplastics.com/wp-content/themes/barnettfacialne007/images/visa.png" alt="visa" data-uw-rm-alt-original="visa"></figure>
+                                </li>
+                                <li>
+                                    <figure><img src="https://www.barnettfacialplastics.com/wp-content/themes/barnettfacialne007/images/discover.png" alt="discover" data-uw-rm-alt-original="discover"></figure>
+                                </li>
+                                <li>
+                                    <figure><img src="https://www.barnettfacialplastics.com/wp-content/themes/barnettfacialne007/images/american-express.png" alt="american express" data-uw-rm-alt-original="american express"></figure>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+        <div class="footer_btm">
+            <div class="wrapper animatedParent animateOnce">
+                <div class="footer_btm_main">
+                    <div class="footer_nav">
+                        <div class="menu-footer-menu-container">
+                            <ul id="menu-footer-menu" class="menu">
+                                <li id="menu-item-29" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-29"><a href="index.html">Home</a></li>
+                                <li id="menu-item-30" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-30"><a href="https://www.barnettfacialplastics.com/facial-plastic-and-reconstructive-surgery-about-us">About Us</a></li>
+                                <li id="menu-item-32" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32"><a href="https://www.barnettfacialplastics.com/facial-plastic-and-reconstructive-surgery-our-products">Our Products</a></li>
+                                <li id="menu-item-148" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-148"><a href="https://www.barnettfacialplastics.com/facial-plastic-and-reconstructive-surgery-injectors">Injectors</a></li>
+                                <li id="menu-item-143" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-143"><a href="https://www.barnettfacialplastics.com/facial-plastic-and-reconstructive-surgery-services">Procedures</a></li>
+                                <li id="menu-item-138" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-138"><a href="https://www.barnettfacialplastics.com/facial-plastic-and-reconstructive-surgery-abfprs">ABFPRS</a></li>
+                                <li id="menu-item-124" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-124"><a href="https://www.barnettfacialplastics.com/facial-plastic-and-reconstructive-surgery-reviews">Reviews</a></li>
+                                <li id="menu-item-136" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-136"><a href="https://www.barnettfacialplastics.com/facial-plastic-and-reconstructive-surgery-photo-albums">Photo Albums</a></li>
+                                <li id="menu-item-31" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31"><a href="https://www.barnettfacialplastics.com/facial-plastic-and-reconstructive-surgery-contact-us">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="copyright">
+                        © Copyright 2024 <span class="footer_comp">Barnett Facial Plastic and Reconstructive Surgery, PA.</span> Designed by <a href="https://proweaver.com" target="_blank" rel="nofollow">Proweaver</a>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
